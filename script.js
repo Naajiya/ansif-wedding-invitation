@@ -2,8 +2,23 @@
 var cover=document.getElementById('cover'),a=document.getElementById('sc'),moon=document.getElementById('moon'),on=false;
 // letters for the name animation
 document.querySelectorAll('.split').forEach(function(el){
-  var t=el.textContent;el.setAttribute('aria-label',t);el.textContent='';
-  Array.from(t).forEach(function(ch,i){var s=document.createElement('span');s.setAttribute('aria-hidden','true');s.style.setProperty('--i',i);s.innerHTML=ch===' '?'&nbsp;':ch;el.appendChild(s)});
+  el.setAttribute('aria-label',el.textContent.replace(/\s+/g,' ').trim());
+  var i=0,nodes=Array.from(el.childNodes);
+  el.textContent='';
+  nodes.forEach(function(n){
+    if(n.nodeType===1){el.appendChild(n);return;}          // keeps your <br>
+    n.textContent.split(/(\s+)/).forEach(function(part){
+      if(!part)return;
+      if(/^\s+$/.test(part)){el.appendChild(document.createTextNode(' '));return;}
+      var w=document.createElement('span');
+      w.className='w';w.setAttribute('aria-hidden','true');
+      Array.from(part).forEach(function(ch){
+        var s=document.createElement('span');
+        s.style.setProperty('--i',i++);s.textContent=ch;w.appendChild(s);
+      });
+      el.appendChild(w);
+    });
+  });
 });
 document.getElementById('open').onclick=function(){
   cover.classList.add('open');
