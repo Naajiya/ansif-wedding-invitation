@@ -34,8 +34,9 @@ section{min-height:100svh;display:flex;flex-direction:column;align-items:center;
 .p{max-width:28ch}
 .sm{font-style:italic;color:var(--lav);font-size:1.05rem}
 .sc{font:400 clamp(3rem,13.5vw,5rem)/1.1 'Parisienne',cursive;color:var(--ivory)}
-.split span{display:inline-block;opacity:0;transform:translateY(-.5em) scale(1.35);filter:blur(7px);transition:opacity .9s,transform .9s,filter .9s;transition-delay:calc(var(--i)*70ms)}
-.split.show span{opacity:1;transform:none;filter:none;text-shadow:0 0 18px rgba(232,213,168,.45)}
+.split .w>span{display:inline-block;opacity:0;transform:translateY(-.5em) scale(1.35);filter:blur(7px);transition:opacity .9s,transform .9s,filter .9s;transition-delay:calc(var(--i)*70ms)}
+.split.show .w>span{opacity:1;transform:none;filter:none;text-shadow:0 0 18px rgba(232,213,168,.45)}
+.w{display:inline-block;white-space:nowrap}
 .amp{font:400 2.6rem 'Parisienne',cursive;color:var(--lav)}
 .orn{width:min(220px,60vw);height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative;margin:.6rem 0}
 .orn i{position:absolute;left:50%;top:50%;width:9px;height:9px;background:var(--gold);transform:translate(-50%,-50%) rotate(45deg);animation:dm 3s ease-in-out infinite}
