@@ -28,7 +28,7 @@ main{position:relative;z-index:2}
 section{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;padding:4.5rem 1.6rem}
 .rv{opacity:0;transform:translateY(22px);transition:opacity 1.2s,transform 1.2s}
 .rv.show{opacity:1;transform:none}
-.d1{transition-delay:.25s}.d2{transition-delay:.5s}.d3{transition-delay:.8s}
+.d1{transition-delay:.25s}.z{transition-delay:.5s}.d3{transition-delay:.8s}
 .ar{font:2rem/1.5 'Amiri',serif;color:var(--gold)}
 .cin{font:500 .95rem 'Cinzel',serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
 .p{max-width:28ch}
